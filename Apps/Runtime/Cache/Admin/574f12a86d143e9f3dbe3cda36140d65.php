@@ -95,29 +95,25 @@
             $("#login").click();
         }
     })
-    $("#login").click(function()
-    {
+    $("#login").click(function() {
         var user = $("#user"),
             password = $("#password"),
             verify   = $("#verify"),
             _csrf    = $("input[name=_csrf]");
-        if (user.val() == "")
-        {
+        if (user.val() == "") {
             alert("用户名不能为空!");
             user.parents("div.form-group").addClass("has-error");
             user.focus();
             return false;
         }
-        if (password.val() == "")
-        {
+        if (password.val() == "") {
             alert("密码不能为空!");
             $(".form-horizontal").find("div.form-group").removeClass("has-error");
             password.parents("div.form-group").addClass("has-error");
             password.focus();
             return false;
         }
-        if (verify.val() == "")
-        {
+        if (verify.val() == "") {
             alert("验证码不能为空!");
             $(".form-horizontal").find("div.form-group").removeClass("has-error");
             verify.parents("div.form-group").addClass("has-error");
