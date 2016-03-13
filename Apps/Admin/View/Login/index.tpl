@@ -79,7 +79,7 @@
     </div>
 </div>
 <!--Global JS-->
-<script src="__ROOT__/Apps/Admin/View/static/js/jquery-1.10.2.min.js"></script>
+<script src="__ROOT__/Apps/Admin/View/static/js/jquery-2.1.4.min.js"></script>
 <script src="__PUBLIC__/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="__PUBLIC__/plugins/waypoints/waypoints.min.js"></script>
 <script src="__PUBLIC__/plugins/nanoScroller/jquery.nanoscroller.min.js"></script>

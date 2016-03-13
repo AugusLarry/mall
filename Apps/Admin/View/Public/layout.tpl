@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="__ROOT__/Apps/Admin/View/static/css/animate.css">
     <!-- Custom styles for this theme -->
     <link rel="stylesheet" href="__ROOT__/Apps/Admin/View/static/css/main.css">
+    <link rel="stylesheet" href="__ROOT__/Apps/Admin/View/static/css/admin.css">
     <script src="__ROOT__/Apps/Admin/View/static/js/modernizr-2.6.2.min.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -47,7 +48,7 @@
 </section>
 <!--Global JS-->
 <!-- <script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script> -->
-<script src="__ROOT__/Apps/Admin/View/static/js/jquery-1.10.2.min.js"></script>
+<script src="__ROOT__/Apps/Admin/View/static/js/jquery-2.1.4.min.js"></script>
 <script src="__PUBLIC__/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="__PUBLIC__/plugins/waypoints/waypoints.min.js"></script>
 <script src="__ROOT__/Apps/Admin/View/static/js/application.js"></script>
@@ -67,10 +68,8 @@
     }
     $(function(){
         setHover();
-    })
-    $(document).ready(function() {
         $('#tooltip-left,#tooltip-top,#tooltip-bottom,#tooltip-right').tooltip()
-    });
+    })
 </script>
 <block name="js">js</block>
 </body>
