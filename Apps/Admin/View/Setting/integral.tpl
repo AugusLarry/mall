@@ -19,46 +19,47 @@
                 </div>
                 <form action="{:U('Admin/Setting/save')}" mini-form="commit" class="form-horizontal form-border" role="form" method="post">
                     <input type="hidden" name="K" value="integral" />
+                    <input type="hidden" name="title" value="积分设置" />
                     <div class="form-group">
                         <label for="config[email]" class="col-sm-2 control-label">邮件认证：</label>
                         <div class="col-sm-4">
-                            <input type="text" name="config[email]" class="form-control" value="0">
+                            <input type="text" name="config[email]" class="form-control" value="{$data.email}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="config[mobile]" class="col-sm-2 control-label">手机认证：</label>
                         <div class="col-sm-4">
-                            <input type="text" name="config[mobile]" class="form-control" value="0">
+                            <input type="text" name="config[mobile]" class="form-control" value="{$data.mobile}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="config[certification]" class="col-sm-2 control-label">实名认证：</label>
                         <div class="col-sm-4">
-                            <input type="text" name="config[certification]" class="form-control" value="0">
+                            <input type="text" name="config[certification]" class="form-control" value="{$data.certification}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="config[photo]" class="col-sm-2 control-label">发布美图：</label>
                         <div class="col-sm-4">
-                            <input type="text" name="config[photo]" class="form-control" value="0">
+                            <input type="text" name="config[photo]" class="form-control" value="{$data.photo}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="config[coupon]" class="col-sm-2 control-label">发布优惠券：</label>
                         <div class="col-sm-4">
-                            <input type="text" name="config[coupon]" class="form-control" value="0">
+                            <input type="text" name="config[coupon]" class="form-control" value="{$data.coupon}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="config[product]" class="col-sm-2 control-label">发布产品：</label>
                         <div class="col-sm-4">
-                            <input type="text" name="config[product]" class="form-control" value="0">
+                            <input type="text" name="config[product]" class="form-control" value="{$data.product}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="config[gold]" class="col-sm-2 control-label">刷新金币：</label>
                         <div class="col-sm-4">
-                            <input type="text" name="config[gold]" class="form-control" value="0">
+                            <input type="text" name="config[gold]" class="form-control" value="{$data.gold}">
                         </div>
                     </div>
                     <div class="form-group">

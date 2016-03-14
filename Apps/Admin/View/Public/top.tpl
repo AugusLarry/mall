@@ -18,7 +18,7 @@
                   <li>
                      <a href="#">
                         <div class="profile-photo">
-                           <img src="__PUBLIC__/img/avatar.gif" alt="" class="img-circle">
+                           <!--img src="__PUBLIC__/img/avatar.gif" alt="" class="img-circle"-->
                         </div>
                         <div class="message-info">
                            <span class="sender">James Bagian</span>
@@ -30,7 +30,7 @@
                   <li>
                      <a href="#">
                         <div class="profile-photo">
-                           <img src="__PUBLIC__/img/avatar1.gif" alt="" class="img-circle">
+                           <!--img src="__PUBLIC__/img/avatar1.gif" alt="" class="img-circle"-->
                         </div>
                         <div class="message-info">
                            <span class="sender">Jeffrey Ashby</span>
@@ -42,7 +42,7 @@
                   <li>
                      <a href="#">
                         <div class="profile-photo">
-                           <img src="__PUBLIC__/img/avatar2.gif" alt="" class="img-circle">
+                           <!--img src="__PUBLIC__/img/avatar2.gif" alt="" class="img-circle"-->
                         </div>
                         <div class="message-info">
                            <span class="sender">John Douey</span>
@@ -54,7 +54,7 @@
                   <li>
                      <a href="#">
                         <div class="profile-photo">
-                           <img src="__PUBLIC__/img/avatar3.gif" alt="" class="img-circle">
+                           <!--img src="__PUBLIC__/img/avatar3.gif" alt="" class="img-circle"-->
                         </div>
                         <div class="message-info">
                            <span class="sender">Ellen Baker</span>
@@ -66,7 +66,7 @@
                   <li>
                      <a href="#">
                         <div class="profile-photo">
-                           <img src="__PUBLIC__/img/avatar4.gif" alt="" class="img-circle">
+                           <!--img src="__PUBLIC__/img/avatar4.gif" alt="" class="img-circle"-->
                         </div>
                         <div class="message-info">
                            <span class="sender">Ivan Bella</span>

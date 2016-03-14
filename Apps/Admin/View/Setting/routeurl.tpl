@@ -19,37 +19,38 @@
                 </div>
                 <form action="{:U('Admin/Setting/save')}" mini-form="commit" class="form-horizontal form-border" role="form" method="post">
                     <input type="hidden" name="K" value="routeurl" />
+                    <input type="hidden" name="title" value="URL设置" />
                     <div class="form-group">
                         <label for="config[route_type]" class="col-sm-2 control-label">URL格式：</label>
                         <div class="col-sm-4">
                             <select class="form-control input-sm" name="config[route_type]">
-                                <option value="0" selected>默认URL格式</option>
-                                <option value="1">目录URL格式</option>
+                                <option value="0" <if condition="$data.route_type eq 0">selected</if>>默认URL格式</option>
+                                <option value="1" <if condition="$data.route_type eq 1">selected</if>>目录URL格式</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="config[article]" class="col-sm-2 control-label">学堂：</label>
                         <div class="col-sm-4">
-                            <input type="text" name="config[article]" class="form-control">
+                            <input type="text" name="config[article]" class="form-control" value="{$data.article}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="config[photo]" class="col-sm-2 control-label">美图：</label>
                         <div class="col-sm-4">
-                            <input type="text" name="config[photo]" class="form-control">
+                            <input type="text" name="config[photo]" class="form-control" value="{$data.photo}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="config[activity]" class="col-sm-2 control-label">活动：</label>
                         <div class="col-sm-4">
-                            <input type="text" name="config[activity]" class="form-control">
+                            <input type="text" name="config[activity]" class="form-control" value="{$data.activity}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="config[product]" class="col-sm-2 control-label">商品：</label>
                         <div class="col-sm-4">
-                            <input type="text" name="config[product]" class="form-control">
+                            <input type="text" name="config[product]" class="form-control" value="{$data.product}">
                         </div>
                     </div>
                     <div class="form-group">

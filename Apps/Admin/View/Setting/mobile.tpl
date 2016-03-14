@@ -19,17 +19,18 @@
                 </div>
                 <form action="{:U('Admin/Setting/save')}" mini-form="commit" class="form-horizontal form-border" role="form" method="post">
                     <input type="hidden" name="K" value="mobile" />
+                    <input type="hidden" name="title" value="3G版设置" />
                     <div class="form-group">
                         <label for="config[title]" class="col-sm-2 control-label">3G版名称：</label>
                         <div class="col-sm-4">
-                            <input type="text" name="config[title]" class="form-control">
+                            <input type="text" name="config[title]" class="form-control" value="{$data.title}">
                         </div>
                         <div class="col-sm-3">如：U嫁城 手机版</div>
                     </div>
                     <div class="form-group">
                         <label for="config[url]" class="col-sm-2 control-label">3G版域名：</label>
                         <div class="col-sm-4">
-                            <input type="text" name="config[url]" class="form-control">
+                            <input type="text" name="config[url]" class="form-control" value="{$data.url}">
                         </div>
                         <div class="col-sm-3">3G版的域名，以http://开头, 如  http://u.ujiacity.cc</div>
                     </div>
@@ -37,10 +38,10 @@
                         <label for="config[forward]" class="col-sm-2 control-label">自动跳转：</label>
                         <div class="col-sm-4">
                             <label for="config[forward]" class="radio-inline">
-                                <input type="radio" class="icheck" checked="" name="config[forward]" value="1"> 是
+                                <input type="radio" class="icheck" name="config[forward]" value="1" <if condition="$data.forward eq 1">checked="checked"</if>> 是
                             </label>
                             <label for="config[forward]" class="radio-inline">
-                                <input type="radio" class="icheck" name="config[forward]" value="0"> 否
+                                <input type="radio" class="icheck" name="config[forward]" value="0" <if condition="$data.forward eq 0">checked="checked"</if>> 否
                             </label>
                         </div>
                         <div class="col-sm-3">开启后用户使用手机浏览器访问网站首页时自动跳转到手机站点首页进行访问</div>
@@ -48,13 +49,13 @@
                     <div class="form-group">
                         <label for="config[down_android]" class="col-sm-2 control-label">安卓下载地址：</label>
                         <div class="col-sm-4">
-                            <input type="text" name="config[down_android]" class="form-control">
+                            <input type="text" name="config[down_android]" class="form-control" value="{$data.down_android}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="config[down_iphone]" class="col-sm-2 control-label">苹果下载地址：</label>
                         <div class="col-sm-4">
-                            <input type="text" name="config[down_iphone]" class="form-control">
+                            <input type="text" name="config[down_iphone]" class="form-control" value="{$data.down_iphone}">
                         </div>
                     </div>
                     <div class="form-group">

@@ -14,7 +14,7 @@
                 <li><a href="{:U('Admin/Setting/comment')}">评论设置</a></li>
                 <li><a href="{:U('Admin/Setting/routeurl')}">URL设置</a></li>
                 <li><a href="{:U('Admin/Setting/domain')}">域名设置</a></li>
-                <li><a href="">全站SEO</a></li>
+                <li><a href="{:U('Admin/Setting/seotmpl')}">全站SEO</a></li>
             </ul>
         </li>
         <li class="sub-menu">

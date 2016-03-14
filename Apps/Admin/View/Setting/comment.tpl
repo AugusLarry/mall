@@ -16,13 +16,14 @@
             <div class="panel-body">
                 <form action="{:U('Admin/Setting/save')}" mini-form="commit" class="form-horizontal form-border" role="form" method="post">
                     <input type="hidden" name="K" value="comment" />
+                    <input type="hidden" name="title" value="评论设置" />
                     <div class="form-group">
                         <label for="config[article_type]" class="col-sm-2 control-label">文章模块：</label>
                         <div class="col-sm-4">
                             <select class="form-control input-sm" name="config[article_type]">
-                                <option value="closed" selected>关闭评论</option>
-                                <option value="comment">站内评论</option>
-                                <option value="sns">社会化评论框</option>
+                                <option value="closed" <if condition="$data.article_type eq 'closed'">selected</if>>关闭评论</option>
+                                <option value="comment" <if condition="$data.article_type eq 'comment'">selected</if>>站内评论</option>
+                                <option value="sns" <if condition="$data.article_type eq 'sns'">selected</if>>社会化评论框</option>
                             </select>
                         </div>
                     </div>
@@ -30,9 +31,9 @@
                         <label for="config[photo_type]" class="col-sm-2 control-label">美图模块：</label>
                         <div class="col-sm-4">
                             <select class="form-control input-sm" name="config[photo_type]">
-                                <option value="closed" selected>关闭评论</option>
-                                <option value="comment">站内评论</option>
-                                <option value="sns">社会化评论框</option>
+                                <option value="closed" <if condition="$data.photo_type eq 'closed'">selected</if>>关闭评论</option>
+                                <option value="comment" <if condition="$data.photo_type eq 'comment'">selected</if>>站内评论</option>
+                                <option value="sns" <if condition="$data.photo_type eq 'sns'">selected</if>>社会化评论框</option>
                             </select>
                         </div>
                     </div>
