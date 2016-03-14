@@ -25,14 +25,14 @@ $(function () {
 	};
 	//页面弹出窗
 	MsgBox.pagebox = function(head,body) {
-		return "<div class='modal fade' id='ajaxModal' tabindex='-1' role='dialog' aria-labelledby='ajaxForm' aria-hidden='true'>\
-					<div class='modal-dialog modal-sm'>\
+		return "<div class='modal fade' id='ajaxPage' tabindex='-1' role='dialog' aria-labelledby='ajaxForm' aria-hidden='true'>\
+					<div class='modal-dialog'>\
 						<div class='modal-content'>\
 							<div class='modal-header'>\
 								<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>x</button>\
 								<h4 class='modal-title'>"+head+"</h4>\
 							</div>\
-							<div class='modal-body'>\
+							<div class='modal-body modal-scroll'>\
 								"+body+"\
 							</div>\
 						</div>\
@@ -77,7 +77,6 @@ $(function () {
 		if ($(this).attr("mini-form") == "commit") {
 			MsgBox.commit();
 		}
-		var backUrl = window.location.href;
 		options.url = $(this).attr("action");
 		options.type = "POST";
 		options.cache = false;
@@ -95,7 +94,6 @@ $(function () {
 				setTimeout(function(){
 					window.location.reload();
 				},1200)
-
 			} else {
 				MsgBox.error(data.info);
 				setTimeout(function(){
@@ -110,8 +108,46 @@ $(function () {
 	})
 	//链接加载弹出窗
 	$("[mini-load]").off("click").on("click", function(){
-		var url = $(this).attr("href") || $(this).attr("action");
-		console.log(url);
+		if ($("#ajaxModal").size() > 0) {
+			$("#ajaxModal p").html(MsgBox.msg.load);
+			$("#ajaxModal").modal("show");
+			setTimeout(function(){
+				$("#ajaxModal").modal("hide");
+			}, 1200);
+		} else {
+			MsgBox.load();
+		}
+		var options = {};
+		options.url = $(this).attr("href") || $(this).attr("action");
+		options.data = {"id": $(this).attr("data")} || {};
+		options.type = "POST";
+		options.cache = false;
+		options.dataType = "json";
+		options.error = function (XMLHttpRequest, textStatus, errorThrown) {
+			MsgBox.error(textStatus);
+			setTimeout(function(){
+				window.location.reload();
+			},1200)
+		}
+		options.success = function (data, textStatus) {
+			if (data.status == 1) {
+				if ($("#ajaxPage").size() > 0) {
+					$("#ajaxPage .modal-title").html(data.title);
+					$("#ajaxPage .modal-body").html(data.info);
+				} else {
+					$("body").append(MsgBox.pagebox(data.title, data.info));
+				}
+				$("#ajaxPage").modal("show");
+			} else {
+				MsgBox.error(data.info);
+				setTimeout(function(){
+					window.location.reload();
+				},1200)
+			}
+		}
+		setTimeout(function(){
+			$.ajax(options);
+		}, 1200);
 		return false;
 	})
 })

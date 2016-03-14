@@ -12,7 +12,7 @@
     <!-- 工作区开始 -->
     <div id="rightside-content">
         <div class="panel panel-default">
-            <div class="panel-heading"><h3>全站SEO设置</h3></div>
+            <div class="panel-heading"><h3>全站SEO设置<a href="{:U('Admin/Setting/seotmplCreate')}" mini-load="添加模板" class="btn btn-primary btn-sm pull-right">添加模板</a></h3></div>
             <div class="panel-body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped">

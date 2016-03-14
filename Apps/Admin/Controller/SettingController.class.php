@@ -33,4 +33,10 @@ class SettingController extends CommonController {
     public function seotmpl () {
         $this->display();
     }
+
+    //新建seo模板
+    public function seotmplCreate () {
+        $content = $this->fetch();
+        $this->ajaxReturn(["info" => "$content", "title" => "添加SEO模板", "status" => 1], "json");
+    }
 }

@@ -55,7 +55,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-4">
-                            <button class="btn btn-primary formSubmit">提交数据</button>
+                            <button class="btn btn-primary">提交数据</button>
                         </div>
                     </div>
                 </form>
