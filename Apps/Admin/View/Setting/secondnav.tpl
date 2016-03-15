@@ -20,9 +20,9 @@
         <li class="sub-menu">
             <a href="javascript:void(0);"><i class="fa fa-caret-right"></i><span>城市设置</span></a>
             <ul>
-                <li><a href="">省份管理</a></li>
-                <li><a href="">城市管理</a></li>
-                <li><a href="">地区管理</a></li>
+                <li><a href="{:U('Admin/Setting/province')}">省份管理</a></li>
+                <li><a href="{:U('Admin/Setting/city')}">城市管理</a></li>
+                <li><a href="{:U('Admin/Setting/area')}">地区管理</a></li>
             </ul>
         </li>
         <li class="sub-menu">

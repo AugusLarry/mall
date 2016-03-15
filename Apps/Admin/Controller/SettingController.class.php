@@ -34,14 +34,47 @@ class SettingController extends CommonController {
         $this->display();
     }
 
-    //新建seo模板
-    public function seotmplCreate () {
-        $content = $this->fetch();
-        $this->show($content, 'utf-8', 'text/xml');
-    }
-
     //保存seo模板
     public function seotmplSave () {
         p(I("post."));die;
+    }
+
+    //省份列表
+    public function province () {
+        $data = M("SystemProvince")->order('orderby')->select();
+        $this->assign("data", $data);
+        $this->display();
+    }
+
+    //保存省份
+    public function provinceSave () {
+        if (!IS_AJAX || I("post.data") == "") $this->error("非法访问");
+        $model = D("SystemProvince");
+        if (!$model->provinceSave(I("post.data")))
+            $this->ajaxReturn(["info" => "添加失败!", "status" => "0"], "json");
+        else
+            $this->ajaxReturn(["info" => "添加成功!", "status" => "1"], "json");
+    }
+
+    //修改省份视图
+    public function provinceEdit () {
+        $data = M("SystemProvince")->find(I("get.province_id"));
+        if (!$data) {
+            $this->error("请求的数据不存在");
+        }
+        else {
+            $this->assign("data", $data);
+            $this->display();
+        }
+    }
+
+    //修改省份
+    public function provinceEdithandle () {
+        if (!IS_AJAX || I("post.data") == "") $this->error("非法访问");
+        $model = D("SystemProvince");
+        if (!$model->edit(I("post.data")))
+            $this->ajaxReturn(["info" => "修改失败!", "status" => "0"], "json");
+        else
+            $this->ajaxReturn(["info" => "修改成功!", "status" => "1"], "json");
     }
 }

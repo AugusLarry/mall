@@ -90,11 +90,13 @@ MsgBox.getData = function(url, data) {
 	setTimeout(function(){
 		$.post(url, data, function(res) {
 			if (res.status == "0") {
-			   MsgBox.error(res.info);
-			   setTimeout(function(){window.location.reload()}, MsgBox.waitTime);
+				console.log(res);
+			   	MsgBox.error(res.info);
+			   	setTimeout(function(){window.location.reload()}, MsgBox.waitTime);
 			} else if (res.status == "1") {
-			   MsgBox.success(res.info);
-			   setTimeout(function(){window.location.reload()}, MsgBox.waitTime);
+				console.log(res);
+			   	MsgBox.success(res.info);
+			   	setTimeout(function(){window.location.reload()}, MsgBox.waitTime);
 			}
 		});
 	}, MsgBox.waitTime);
