@@ -52,6 +52,8 @@
 <script src="__PUBLIC__/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="__PUBLIC__/plugins/waypoints/waypoints.min.js"></script>
 <script src="__ROOT__/Apps/Admin/View/static/js/application.js"></script>
+<script src="__PUBLIC__/plugins/ajaxForm/ajaxForm.js"></script>
+<script src="__PUBLIC__/plugins/ajaxForm/ajax.js"></script>
 <script type="text/javascript">
     function setHover()
     {

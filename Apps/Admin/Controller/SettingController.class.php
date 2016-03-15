@@ -20,13 +20,13 @@ class SettingController extends CommonController {
 
     //保存设置
     public function save () {
-    	//p(serialize(I("post.")));die;
+    	//p(I("post."));die;
         if (!IS_AJAX || I("post.K") == "") $this->error("非法访问");
         $model = D("SystemConfig");
         if (!$model->checkPost(I("post.")))
-            $this->ajaxReturn(["info" => "保存失败!", "status" => 0], "json");
+            $this->ajaxReturn(["info" => "保存失败!", "status" => "0"], "json");
         else
-            $this->ajaxReturn(["info" => "保存成功!", "status" => 1], "json");
+            $this->ajaxReturn(["info" => "保存成功!", "status" => "1"], "json");
     }
 
     //seo模板页面
@@ -37,6 +37,11 @@ class SettingController extends CommonController {
     //新建seo模板
     public function seotmplCreate () {
         $content = $this->fetch();
-        $this->ajaxReturn(["info" => "$content", "title" => "添加SEO模板", "status" => 1], "json");
+        $this->show($content, 'utf-8', 'text/xml');
+    }
+
+    //保存seo模板
+    public function seotmplSave () {
+        p(I("post."));die;
     }
 }

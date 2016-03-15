@@ -76,7 +76,6 @@
 <block name="js">
     <script src="__PUBLIC__/plugins/countTo/jquery.countTo.js"></script>
     <script src="__PUBLIC__/plugins/icheck/js/icheck.min.js"></script>
-    <script src="__PUBLIC__/plugins/ajaxForm/ajax.js"></script>
     <script>
         $(document).ready(function() {
             app.timer();
