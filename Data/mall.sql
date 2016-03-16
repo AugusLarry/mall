@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50540
 File Encoding         : 65001
 
-Date: 2016-03-15 23:16:33
+Date: 2016-03-16 23:36:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,7 +33,7 @@ CREATE TABLE `mall_admin` (
 -- ----------------------------
 -- Records of mall_admin
 -- ----------------------------
-INSERT INTO `mall_admin` VALUES ('8', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1458045939', '127.0.0.1', '0', '1457691990');
+INSERT INTO `mall_admin` VALUES ('8', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1458126170', '127.0.0.1', '0', '1457691990');
 
 -- ----------------------------
 -- Table structure for `mall_auth_group`
@@ -95,12 +95,55 @@ CREATE TABLE `mall_system_area` (
   `city_id` smallint(6) DEFAULT '0' COMMENT '所属城市ID',
   `area_name` varchar(50) DEFAULT '' COMMENT '地区名称',
   `orderby` smallint(6) DEFAULT '50' COMMENT '排序',
+  `dateline` int(10) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`area_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='地区表';
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='地区表';
 
 -- ----------------------------
 -- Records of mall_system_area
 -- ----------------------------
+INSERT INTO `mall_system_area` VALUES ('1', '1', '鹿城区', '1', '1458123128');
+INSERT INTO `mall_system_area` VALUES ('2', '1', '龙湾区', '2', '1458123128');
+INSERT INTO `mall_system_area` VALUES ('3', '1', '瓯海区', '3', '1458123128');
+INSERT INTO `mall_system_area` VALUES ('4', '1', '瓯北区', '4', '1458123128');
+INSERT INTO `mall_system_area` VALUES ('5', '1', '瑞安区', '5', '1458123128');
+
+-- ----------------------------
+-- Table structure for `mall_system_attr`
+-- ----------------------------
+DROP TABLE IF EXISTS `mall_system_attr`;
+CREATE TABLE `mall_system_attr` (
+  `attr_id` smallint(6) unsigned NOT NULL AUTO_INCREMENT COMMENT '属性ID',
+  `title` varchar(50) DEFAULT '' COMMENT '属性名称',
+  `from_id` smallint(6) DEFAULT '0' COMMENT '属性分类ID',
+  `multi` enum('Y','N') DEFAULT 'Y' COMMENT '是否可以多选',
+  `filter` enum('Y','N') DEFAULT 'Y' COMMENT '是否可以搜索',
+  `orderby` smallint(6) DEFAULT '0' COMMENT '排序',
+  PRIMARY KEY (`attr_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='属性表';
+
+-- ----------------------------
+-- Records of mall_system_attr
+-- ----------------------------
+INSERT INTO `mall_system_attr` VALUES ('1', '类型', '1', 'Y', 'Y', '50');
+INSERT INTO `mall_system_attr` VALUES ('2', '特色', '1', 'Y', 'Y', '50');
+
+-- ----------------------------
+-- Table structure for `mall_system_attr_from`
+-- ----------------------------
+DROP TABLE IF EXISTS `mall_system_attr_from`;
+CREATE TABLE `mall_system_attr_from` (
+  `from_id` smallint(6) unsigned NOT NULL AUTO_INCREMENT COMMENT '属性分类ID',
+  `from` varchar(30) DEFAULT '' COMMENT '来源KEY',
+  `title` varchar(50) DEFAULT '' COMMENT '属性分类名称',
+  PRIMARY KEY (`from_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='属性分类表';
+
+-- ----------------------------
+-- Records of mall_system_attr_from
+-- ----------------------------
+INSERT INTO `mall_system_attr_from` VALUES ('1', 'hotel', '酒店');
+INSERT INTO `mall_system_attr_from` VALUES ('2', 'book', '预约服务');
 
 -- ----------------------------
 -- Table structure for `mall_system_city`
@@ -126,11 +169,13 @@ CREATE TABLE `mall_system_city` (
   `audit` tinyint(1) DEFAULT '0' COMMENT '状态(1:开启;0:关闭)',
   `dateline` int(10) DEFAULT '0' COMMENT '添加时间',
   PRIMARY KEY (`city_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='城市表';
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='城市表';
 
 -- ----------------------------
 -- Records of mall_system_city
 -- ----------------------------
+INSERT INTO `mall_system_city` VALUES ('1', '1', '温州', 'wenzhou', '1', '', '', '', '', '', '', '', '', '', '', '1', '1', '1458111700');
+INSERT INTO `mall_system_city` VALUES ('2', '2', '北京', 'beijing', '1', '', '', '', '', '', '', '', '', '', '', '2', '1', '1458120461');
 
 -- ----------------------------
 -- Table structure for `mall_system_config`
@@ -167,12 +212,13 @@ CREATE TABLE `mall_system_province` (
   `orderby` smallint(6) DEFAULT '50' COMMENT '排序',
   `dateline` int(10) DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`province_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='省份表';
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='省份表';
 
 -- ----------------------------
 -- Records of mall_system_province
 -- ----------------------------
 INSERT INTO `mall_system_province` VALUES ('1', '浙江', '1', '1458049889');
+INSERT INTO `mall_system_province` VALUES ('2', '北京', '2', '1458108720');
 
 -- ----------------------------
 -- Table structure for `mall_system_tmpl`

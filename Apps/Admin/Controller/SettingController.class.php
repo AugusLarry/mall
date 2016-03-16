@@ -143,4 +143,94 @@ class SettingController extends CommonController {
         else
             $this->ajaxReturn(["info" => "添加成功!", "status" => "1"], "json");
     }
+
+    //修改地区视图
+    public function areaEdit () {
+        $data = M("SystemArea")->find(I("get.area_id"));
+        if (!$data) {
+            $this->error("请求的数据不存在");
+        }
+        else {
+            $this->assign("data", $data);
+            $this->display();
+        }
+    }
+
+    //修改地区
+    public function areaEdithandle () {
+        if (!IS_AJAX || I("post.data") == "") $this->error("非法访问");
+        $model = D("SystemArea");
+        if (!$model->edit(I("post.data")))
+            $this->ajaxReturn(["info" => "修改失败!", "status" => "0"], "json");
+        else
+            $this->ajaxReturn(["info" => "修改成功!", "status" => "1"], "json");
+    }
+
+    //属性分类列表
+    public function attrfrom () {
+        $data = M("SystemAttrFrom")->select();
+        $this->assign("data", $data);
+        $this->display();
+    }
+
+    //保存属性分类
+    public function attrfromSave () {
+        if (!IS_AJAX || I("post.data") == "") $this->error("非法访问");
+        $model = D("SystemAttrFrom");
+        if (!$model->attrfromSave(I("post.data")))
+            $this->ajaxReturn(["info" => "添加失败!", "status" => "0"], "json");
+        else
+            $this->ajaxReturn(["info" => "添加成功!", "status" => "1"], "json");
+    }
+
+    //修改属性分类视图
+    public function attrfromEdit () {
+        $data = M("SystemAttrFrom")->find(I("get.from_id"));
+        if (!$data) {
+            $this->error("请求的数据不存在");
+        }
+        else {
+            $this->assign("data", $data);
+            $this->display();
+        }
+    }
+
+    //修改属性分类
+    public function attrfromEdithandle () {
+        if (!IS_AJAX || I("post.data") == "") $this->error("非法访问");
+        $model = D("SystemAttrFrom");
+        if (!$model->edit(I("post.data")))
+            $this->ajaxReturn(["info" => "修改失败!", "status" => "0"], "json");
+        else
+            $this->ajaxReturn(["info" => "修改成功!", "status" => "1"], "json");
+    }
+
+    //属性列表
+    public function attr () {
+        $data = M("SystemAttr")->order("orderby")->select();
+        $this->assign("data", $data);
+        $this->display();
+    }
+
+    //保存属性
+    public function attrSave () {
+        if (!IS_AJAX || I("post.data") == "") $this->error("非法访问");
+        $model = D("SystemAttr");
+        if (!$model->attrSave(I("post.data")))
+            $this->ajaxReturn(["info" => "添加失败!", "status" => "0"], "json");
+        else
+            $this->ajaxReturn(["info" => "添加成功!", "status" => "1"], "json");
+    }
+
+    //修改属性视图
+    public function attrEdit () {
+        $data = M("SystemAttrFrom")->find(I("get.attr_id"));
+        if (!$data) {
+            $this->error("请求的数据不存在");
+        }
+        else {
+            $this->assign("data", $data);
+            $this->display();
+        }
+    }
 }

@@ -1,4 +1,4 @@
-<form action="{:U('Admin/Setting/citySave')}" mini-form="commit" class="form-horizontal" role="form" method="post">
+<form action="{:U('Admin/Setting/citySave')}" mini-form="commit" class="form-horizontal form-border" role="form" method="post">
     <div class="form-group">
         <label for="data[province_id]" class="col-sm-3 control-label">省份</label>
         <div class="col-sm-6">

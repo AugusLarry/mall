@@ -40,4 +40,15 @@ class SystemAreaModel extends Model {
             return true;
         }
     }
+    //修改地区数据处理
+    public function edit ($d) {
+        //验证数据 || city_id不存在 || city_id错误
+        if (!$this->create($d) || !isset($d['area_id']) || !$this->find($d['area_id'])) {
+            return false;
+        } else {
+            $result = $this->save($d);
+            if (!$result) return false;
+            return true;
+        }
+    }
 }

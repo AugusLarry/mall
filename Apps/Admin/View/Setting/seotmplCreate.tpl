@@ -1,7 +1,7 @@
 <div class="alert alert-danger alert-dismissable" style="padding: 8px;margin-bottom: 10px;">
     如果您不是开发人员，请不要修改这里
 </div>
-<form action="{:U('Admin/Setting/seotmplSave')}" mini-form="commit" class="form-horizontal" role="form" method="post">
+<form action="{:U('Admin/Setting/seotmplSave')}" mini-form="commit" class="form-horizontal form-border" role="form" method="post">
     <div class="form-group">
         <label for="data[title]" class="col-sm-2 control-label">标题</label>
         <div class="col-sm-10">
@@ -14,7 +14,7 @@
             <input type="text" class="form-control" name="data[key]">
         </div>
     </div>
-    <table class="table table-bordered">
+    <table class="table">
     	<thead>
     		<tr>
     			<th>变量</th>

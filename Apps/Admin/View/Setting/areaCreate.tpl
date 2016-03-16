@@ -1,7 +1,7 @@
 <div class="alert alert-danger alert-dismissable" style="padding: 8px;margin-bottom: 10px;">
     批量添加地区，一行一个
 </div>
-<form action="{:U('Admin/Setting/areaSave')}" mini-form="commit" class="form-horizontal" role="form" method="post">
+<form action="{:U('Admin/Setting/areaSave')}" mini-form="commit" class="form-horizontal form-border" role="form" method="post">
     <div class="form-group">
         <label for="data[province_id]" class="col-sm-2 control-label">省份</label>
         <div class="col-sm-6">

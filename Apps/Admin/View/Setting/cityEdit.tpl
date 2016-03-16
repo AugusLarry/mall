@@ -1,4 +1,4 @@
-<form action="{:U('Admin/Setting/cityEdithandle')}" mini-form="commit" class="form-horizontal" role="form" method="post">
+<form action="{:U('Admin/Setting/cityEdithandle')}" mini-form="commit" class="form-horizontal form-border" role="form" method="post">
     <input type="hidden" name="data[city_id]" value="{$data.city_id}">
     <div class="form-group">
         <label for="data[province_id]" class="col-sm-3 control-label">省份</label>

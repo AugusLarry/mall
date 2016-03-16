@@ -157,7 +157,7 @@
                         <div class="col-sm-3">
                             <div class="input-group input-group-sm">
                                 <span class="input-group-addon"><input type="checkbox" name="config[hotel][watermark]" value="1" <php>if ($data['hotel']['watermark'] == "1"){echo "checked='checked'";}</php>></span>
-                                <input type="text" class="form-control" value="水印(全局水印开启才生效)">
+                                <input type="text" class="form-control" disabled="disabled" value="水印(全局水印开启才生效)">
                             </div>
                         </div>
                         <div class="col-sm-2">
@@ -199,7 +199,7 @@
                         <div class="col-sm-3">
                             <div class="input-group input-group-sm">
                                 <span class="input-group-addon"><input type="checkbox" name="config[product][watermark]" value="1" <php>if ($data['product']['watermark'] == "1"){echo "checked='checked'";}</php>></span>
-                                <input type="text" class="form-control" value="水印(全局水印开启才生效)">
+                                <input type="text" class="form-control" disabled="disabled" value="水印(全局水印开启才生效)">
                             </div>
                         </div>
                         <div class="col-sm-2">
@@ -226,7 +226,7 @@
                         <div class="col-sm-3">
                             <div class="input-group input-group-sm">
                                 <span class="input-group-addon"><input type="checkbox" name="config[album][watermark]" value="1" <php>if ($data['album']['watermark'] == "1"){echo "checked='checked'";}</php>></span>
-                                <input type="text" class="form-control" value="水印(全局水印开启才生效)">
+                                <input type="text" class="form-control" disabled="disabled" value="水印(全局水印开启才生效)">
                             </div>
                         </div>
                         <div class="col-sm-2">
@@ -253,7 +253,7 @@
                         <div class="col-sm-3">
                             <div class="input-group input-group-sm">
                                 <span class="input-group-addon"><input type="checkbox" name="config[tuan][watermark]" value="1" <php>if ($data['tuan']['watermark'] == "1"){echo "checked='checked'";}</php>></span>
-                                <input type="text" class="form-control" value="水印(全局水印开启才生效)">
+                                <input type="text" class="form-control" disabled="disabled" value="水印(全局水印开启才生效)">
                             </div>
                         </div>
                         <div class="col-sm-2">
@@ -274,7 +274,7 @@
                         <div class="col-sm-3">
                             <div class="input-group input-group-sm">
                                 <span class="input-group-addon"><input type="checkbox" name="config[article][watermark]" value="1" <php>if ($data['article']['watermark'] == "1"){echo "checked='checked'";}</php>></span>
-                                <input type="text" class="form-control" value="水印(全局水印开启才生效)">
+                                <input type="text" class="form-control" disabled="disabled" value="水印(全局水印开启才生效)">
                             </div>
                         </div>
                         <div class="col-sm-2">
@@ -295,7 +295,7 @@
                         <div class="col-sm-3">
                             <div class="input-group input-group-sm">
                                 <span class="input-group-addon"><input type="checkbox" name="config[editor][watermark]" value="1" <php>if ($data['editor']['watermark'] == "1"){echo "checked='checked'";}</php>></span>
-                                <input type="text" class="form-control" value="水印(全局水印开启才生效)">
+                                <input type="text" class="form-control" disabled="disabled" value="水印(全局水印开启才生效)">
                             </div>
                         </div>
                         <div class="col-sm-2">

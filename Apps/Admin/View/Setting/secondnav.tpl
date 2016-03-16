@@ -28,8 +28,8 @@
         <li class="sub-menu">
             <a href="javascript:void(0);"><i class="fa fa-caret-right"></i><span>属性设置</span></a>
             <ul>
-                <li><a href="">属性分类</a></li>
-                <li><a href="">属性列表</a></li>
+                <li><a href="{:U('Admin/Setting/attrfrom')}">属性分类</a></li>
+                <li><a href="{:U('Admin/Setting/attr')}">属性列表</a></li>
             </ul>
         </li>
         <li class="sub-menu">
