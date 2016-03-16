@@ -21,30 +21,25 @@ class SystemProvinceModel extends Model {
     ];
     //添加省份数据处理
     public function provinceSave ($d) {
-        if (!$this->create($d)) {
+        //验证数据 || 相同名称
+        if (!$this->create($d) || $this->where(["province_name" => $d["province_name"]])->select()) {
             return false;
         } else {
-            //如果数据库中已有相同名称省份
-            if ($this->getByName($d['province_name'])) {
-                return false;
-            } else {
-                $this->dateline = NOW_TIME;
-                $this->add();
-            }
+            $d["dateline"] = NOW_TIME;
+            $result = $this->add($d);
+            if (!$result) return false;
+            return true;
         }
-        return true;
     }
     //修改省份数据处理
     public function edit ($d) {
-        if (!$this->create($d)) {
+        //验证数据 || province_id不存在 || province_id错误
+        if (!$this->create($d) || !isset($d['province_id']) || !$this->find($d['province_id'])) {
             return false;
         } else {
-            if (!isset($d['province_id']) || !$this->find($d['province_id'])) {
-                return false;
-            } else {
-                $this->save($d);
-            }
+            $result = $this->save($d);
+            if (!$result) return false;
+            return true;
         }
-        return true;
     }
 }

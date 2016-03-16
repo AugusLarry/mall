@@ -12,7 +12,7 @@
     <!-- 工作区开始 -->
     <div id="rightside-content">
         <div class="panel panel-default">
-            <div class="panel-heading"><h3>省份管理<a href="{:U('Admin/Setting/provinceCreate')}" mini-load="添加模板" class="btn btn-primary btn-sm pull-right">添加省份</a></h3></div>
+            <div class="panel-heading"><h3>省份管理<a href="{:U('Admin/Setting/provinceCreate')}" mini-load="添加省份" class="btn btn-primary btn-sm pull-right">添加省份</a></h3></div>
             <div class="panel-body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped">

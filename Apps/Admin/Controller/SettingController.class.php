@@ -39,6 +39,16 @@ class SettingController extends CommonController {
         p(I("post."));die;
     }
 
+    //通过省份ID获取他所有的城市
+    public function getCitysForProvince () {
+        if (!IS_AJAX || I("get.province_id") == "") $this->error("非法访问");
+        $data = M("SystemCity")->where(["province_id" => I("get.province_id")])->field(["city_id", "city_name"])->select();
+        if (!$data)
+            $this->ajaxReturn(["error" => 1], "json");
+        else
+            $this->ajaxReturn(["citys" => $data], "json");
+    }
+
     //省份列表
     public function province () {
         $data = M("SystemProvince")->order('orderby')->select();
@@ -76,5 +86,61 @@ class SettingController extends CommonController {
             $this->ajaxReturn(["info" => "修改失败!", "status" => "0"], "json");
         else
             $this->ajaxReturn(["info" => "修改成功!", "status" => "1"], "json");
+    }
+
+    //城市列表
+    public function city () {
+        $data = M("SystemCity")->order('orderby')->select();
+        $this->assign("data", $data);
+        $this->display();
+    }
+
+    //保存城市
+    public function citySave () {
+        if (!IS_AJAX || I("post.data") == "") $this->error("非法访问");
+        $model = D("SystemCity");
+        if (!$model->citySave(I("post.data")))
+            $this->ajaxReturn(["info" => "添加失败!", "status" => "0"], "json");
+        else
+            $this->ajaxReturn(["info" => "添加成功!", "status" => "1"], "json");
+    }
+
+    //修改城市视图
+    public function cityEdit () {
+        $data = M("SystemCity")->find(I("get.city_id"));
+        if (!$data) {
+            $this->error("请求的数据不存在");
+        }
+        else {
+            $this->assign("data", $data);
+            $this->display();
+        }
+    }
+
+    //修改城市
+    public function cityEdithandle () {
+        if (!IS_AJAX || I("post.data") == "") $this->error("非法访问");
+        $model = D("SystemCity");
+        if (!$model->edit(I("post.data")))
+            $this->ajaxReturn(["info" => "修改失败!", "status" => "0"], "json");
+        else
+            $this->ajaxReturn(["info" => "修改成功!", "status" => "1"], "json");
+    }
+
+    //地区列表
+    public function area () {
+        $data = M("SystemArea")->order('orderby')->select();
+        $this->assign("data", $data);
+        $this->display();
+    }
+
+    //保存地区
+    public function areaSave () {
+        if (!IS_AJAX || I("post.data") == "") $this->error("非法访问");
+        $model = D("SystemArea");
+        if (!$model->areaSave(I("post.data")))
+            $this->ajaxReturn(["info" => "添加失败!", "status" => "0"], "json");
+        else
+            $this->ajaxReturn(["info" => "添加成功!", "status" => "1"], "json");
     }
 }
