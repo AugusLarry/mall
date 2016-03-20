@@ -32,4 +32,8 @@ class SystemAttrModel extends Model {
             return true;
         }
     }
+    //修改属性数据处理
+    public function attrEdit ($d) {
+        p($d);die;
+    }
 }

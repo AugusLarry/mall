@@ -19,4 +19,13 @@ $(function () {
 		MsgBox.loadPage(url, data);
 		return false;
 	})
+	//列表页直接更新内容
+	$("[mini-submit]").off("click").on("click", function(){
+		MsgBox.commit();
+		var form = $(this).attr("mini-submit");
+		var url = $(this).attr("data-action") || $(form).attr("action");
+		var data = $(form).serialize();
+		MsgBox.getData(url, data);
+		return false;
+	})
 })

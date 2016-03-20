@@ -2,3 +2,4 @@
 #ajaxModal {z-index: 1100;}
 .btn {margin-bottom: 0px;}
 .panel {margin-bottom: 0px;}
+.panel-fix-bottom {position: fixed;bottom: 0px;width: 100%;}

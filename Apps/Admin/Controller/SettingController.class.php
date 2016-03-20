@@ -227,10 +227,16 @@ class SettingController extends CommonController {
         $data = M("SystemAttrFrom")->find(I("get.attr_id"));
         if (!$data) {
             $this->error("请求的数据不存在");
-        }
-        else {
+        } else {
             $this->assign("data", $data);
             $this->display();
         }
+    }
+
+    //修改属性
+    public function attrEdithandle () {
+        if (!IS_AJAX || I("post.data") == "") $this->error("非法访问");
+        $model = D("SystemAttr");
+        $model->attrEdit(I("post."));
     }
 }
